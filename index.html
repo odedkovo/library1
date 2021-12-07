@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Document</title>
+  </head>
+  <body onload="onInit()">
+    <div class="modal">
+      <h1>modal</h1>
+    </div>
+    <div class="main-content">
+      <h1>welcome to our library</h1>
+      <div class="add-book-modal">
+        <h3>book name</h3>
+        <input class="book-name" type="text" placeholder="Enter book name" />
+        <h3>price</h3>
+        <input class="book-price" type="text" placeholder="Enter price" />
+        <br />
+        <button onclick="onAddBooks()">add book</button>
+        <button onclick="onCloseAddBookModal()">close</button>
+      </div>
+      <button onclick="showAddModal()">wanna add book?</button>
+
+      <table border="5px"></table>
+    </div>
+    <button class="next-button" onclick="onNextPage()">next page</button>
+    <button class="prev-button" onclick="onPrevPage()">prev page</button>
+
+    <script src="js/storage.service.js"></script>
+    <script src="js/service.js"></script>
+    <script src="js/controller.js"></script>
+  </body>
+</html>
