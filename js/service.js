@@ -13,7 +13,8 @@ function getBooks() {
 function createBooks() {
   var books = loadFromStorage('booksDB');
   console.log(books);
-  if (books.length !== 0) gBooks = books;
+
+  if (books) gBooks = books;
   else {
     console.log('you are in create books');
     gBooks = [
