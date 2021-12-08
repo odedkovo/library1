@@ -1,12 +1,55 @@
 body {
-  background-color: aquamarine;
+  background-image: url('../img/hogwarts-library.png');
   overflow: hidden;
+  color: bisque;
 }
+
+.rtl {
+  direction: rtl;
+}
+
 h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+
+.select-div {
+  margin: 0 auto;
   text-align: center;
 }
 
+.table-head {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(121, 130, 96, 0.558158297498687) 0%,
+    rgba(45, 253, 118, 1) 19%,
+    rgba(144, 190, 120, 0.4009978991596639) 97%
+  );
+}
+
+.table-head:hover {
+  cursor: pointer;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 38, 0.9867297260701156) 41%,
+    rgba(252, 176, 69, 1) 100%,
+    rgba(252, 176, 69, 1) 178%,
+    rgba(252, 176, 69, 1) 178%
+  );
+}
 table {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
   margin: auto;
 }
 
@@ -17,15 +60,29 @@ table img {
 td {
   height: 40px;
   min-width: 100px;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 0.26684177088804273) 100%
+  );
 }
 .add-book-modal {
-  position: relative;
-  background-color: rgba(137, 43, 226, 0.445);
-  height: 200px;
-  width: 200px;
-  left: 0%;
+  text-align: center;
+  position: fixed;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  height: 50vh;
+  width: 400px;
+  margin-inline-start: -50%;
+
   transition: 0.3s;
-  left: -50%;
+  border: black solid 3px;
+  z-index: 1;
 }
 
 .modal {
@@ -33,26 +90,85 @@ td {
   background-color: rgba(137, 43, 226, 0.425);
   width: 20%;
   height: 80vh;
-  left: 100%;
+  margin-inline-start: 150%;
   z-index: 1;
   transition: 0.5s;
 }
 .rate-span {
   background-color: rgb(255, 255, 255);
-  padding-left: 15px;
-  padding-right: 15px;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 2px;
 }
 
 .modal img {
   width: 100%;
 }
 
-.next-button {
-  position: relative;
-  left: 85%;
+button {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.prev-button {
-  position: relative;
-  left: 10%;
+button:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.directions-pages {
+  /* margin: auto; */
+  display: flex;
+  justify-content: space-around;
+  /* text-align: center; */
+}
+
+.wanna-add-book {
+  margin-inline-start: 10%;
+}
+
+/* input {
+  color: black;
+} */
+
+.flash-modal {
+  color: black;
+
+  font-size: 20px;
+  text-align: center;
+  position: fixed;
+  height: 120px;
+  width: 250px;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(157, 186, 230, 1) 90%,
+    rgba(148, 187, 233, 0.2752451322325805) 100%
+  );
+  margin-inline-start: 70%;
+  bottom: -200px;
+  transition: 0.3s;
 }

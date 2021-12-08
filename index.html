@@ -12,24 +12,77 @@
       <h1>modal</h1>
     </div>
     <div class="main-content">
-      <h1>welcome to our library</h1>
-      <div class="add-book-modal">
-        <h3>book name</h3>
-        <input class="book-name" type="text" placeholder="Enter book name" />
-        <h3>price</h3>
-        <input class="book-price" type="text" placeholder="Enter price" />
-        <br />
-        <button onclick="onAddBooks()">add book</button>
-        <button onclick="onCloseAddBookModal()">close</button>
-      </div>
-      <button onclick="showAddModal()">wanna add book?</button>
+      <h1 data-trans="title">welcome to our library</h1>
 
-      <table border="5px"></table>
-    </div>
-    <button class="next-button" onclick="onNextPage()">next page</button>
-    <button class="prev-button" onclick="onPrevPage()">prev page</button>
+      <div class="select-div">
+        <select onchange="onSetLang(this.value)">
+          <option value="en">English</option>
+          <option value="he">עברית</option>
+        </select>
+      </div>
+
+      <button
+        class="wanna-add-book"
+        data-trans="wanna-add-book-button"
+        onclick="showAddModal()"
+      >
+        wanna add book?
+      </button>
+      <div class="add-book-modal">
+        <h3 data-trans="book-name">book name</h3>
+        <input
+          data-trans="ender-book-name"
+          class="book-name"
+          type="text"
+          placeholder="Enter book name"
+        />
+        <h3 data-trans="price-table">price</h3>
+        <input
+          data-trans="enter-price"
+          class="book-price"
+          type="text"
+          placeholder="Enter price"
+        />
+        <br />
+        <button data-trans="add-book-button" onclick="onAddBooks()">
+          add book
+        </button>
+        <button data-trans="close" onclick="onCloseAddBookModal()">
+          close
+        </button>
+      </div>
+
+      <table border="5px">
+         <thead>
+           <tr>
+             <td class="table-head" onclick ="setSort('ID')" data-trans="id-table">id</td>
+             <td class="table-head" onclick = "setSort('TXT')"  data-trans="title-table">title</td>
+             <td class="table-head" onclick =" setSort('PRICE')" data-trans="price-table">price</td>
+             <td class="table-head" data-trans="img-table">img</>
+              <td class="table-head" data-trans="actions-table">actions</td>
+              <td class="table-head" onclick = "setSort('RATE')" data-trans="rate-table">rate</td>
+            </tr>
+          </thead>
+        <tbody></tbody>
+
+      </table>
+   <div  class="directions-pages">
+
+     <button data-trans="next-button" class="next-button" onclick="onNextPage()">
+      next page
+    </button>
+    <div class="pages-num"></div>
+    <button data-trans="prev-button" class="prev-button" onclick="onPrevPage()">
+      prev page
+    </button>
+  </div>
+  
+  <div class="flash-modal">
+  
+  </div>
 
     <script src="js/storage.service.js"></script>
+    <script src="js/i18n-service.js"></script>
     <script src="js/service.js"></script>
     <script src="js/controller.js"></script>
   </body>
